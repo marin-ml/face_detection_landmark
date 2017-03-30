@@ -49,7 +49,7 @@ predictor = dlib.shape_predictor(PREDICTOR_PATH)
 
 def get_landmarks(im):
 
-    rect = detector(im, 1)
+    rect = detector(im, 0)
 
     if len(rect) != 1:      # raise TooManyFaces or NoFaces
         return
