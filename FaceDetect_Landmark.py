@@ -68,10 +68,13 @@ if __name__ == '__main__':
 
     while cap.isOpened():
         ret, im2 = cap.read()
-        landmarks2 = get_landmarks(im2)
 
-        cv2.rectangle(im2, (30, 450), (200, 450), color_black, 54)
-        cv2.rectangle(im2, (30, 450), (200, 450), color_white, 50)
+        # ---------- get the camera video size ---------------
+        height, width = im2.shape[:2]
+
+        landmarks2 = get_landmarks(im2)
+        cv2.rectangle(im2, (30, height - 30), (200, height - 30), color_black, 54)
+        cv2.rectangle(im2, (30, height - 30), (200, height - 30), color_white, 50)
 
         if landmarks2 is None:
             alarm_str = "No Detect!"
@@ -88,7 +91,7 @@ if __name__ == '__main__':
                 alarm_str = "Ok!"
 
         # ------------ display the alarm string --------------
-        cv2.putText(im2, alarm_str, (20, 460), cv2.FONT_HERSHEY_DUPLEX, 1, color_red, 2)
+        cv2.putText(im2, alarm_str, (20, height - 20), cv2.FONT_HERSHEY_DUPLEX, 1, color_red, 2)
         cv2.imshow("Face Swapped", im2)
 
         k = cv2.waitKey(30) & 0xff
