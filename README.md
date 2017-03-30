@@ -2,11 +2,11 @@
 
 This project is the extract the landmark of the face using dlib.
 
-### What is this repository for? ###
+### Requirement ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* python2.7
+* OpenCV
+* Windows
 
 ### How do I get set up? ###
 
